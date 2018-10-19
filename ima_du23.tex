@@ -1,0 +1,42 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[total={170mm,240mm},left=17mm,top=20mm]{geometry}
+\usepackage{times}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{tikz}
+
+\begin{document}
+\section*{Příklad 3}
+Najděte a nakreslete definiční obor funkce $f(x,y)=\frac{1}{ln(1-|x|-|y|)}$.\\
+\linebreak
+Z přepisu funkce vyplývají následující podmínky:
+$$1-|x|-|y|>0 \wedge 1-|x|-|y|\neq1$$
+Obě podmínky upravíme:
+$$1-|x|-|y|>0 \Rightarrow 1>|x|+|y|$$
+$$1-|x|-|y|\neq1 \Rightarrow 0\neq|x|+|y|$$
+Pro vyšetření funkce použijeme:
+$$|x|+|y|=1$$
+$$|x|+|y|=0$$
+Odtud zjistíme kde funkce je a není definovaná:
+$$x\neq0 \wedge y\neq0, |x|+|y|<1$$
+Definiční obor:
+$$(x,y) \in \mathds{R}^2 : |x|+|y|<1 \wedge x=y\neq0$$
+\begin{center}
+\begin{tikzpicture}
+	\path 	(0,1) node(a) {} 
+      		(1,0) node(b) {}
+      		(0,-1) node(c) {}
+      		(-1,0) node(d) {};
+    \draw[fill=green,dashed,very thick,fill opacity=0.7] (0,2) -- (2,0) -- (0,-2) -- (-2,0) -- (0,2);
+	\draw[fill=white,very thick](0,0) circle (0.1cm);
+	\draw[fill=white,very thick](0,2) circle (0.1cm) node[right] {$1$};
+	\draw[fill=white,very thick](2,0) circle (0.1cm) node[below] {$1$};
+	\draw[fill=white,very thick](0,-2) circle (0.1cm) node[right] {$-1$};
+	\draw[fill=white,very thick](-2,0) circle (0.1cm) node[below] {$-1$};
+	\draw[->](-4,0)--(4,0) node[right] {$x$};
+	\draw[->](0,-4)--(0,4) node[above] {$y$};
+\end{tikzpicture}
+\end{center}
+\end{document}
